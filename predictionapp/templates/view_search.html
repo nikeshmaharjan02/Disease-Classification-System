@@ -1,0 +1,44 @@
+{% extends 'admin_base.html' %}
+{% block main %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="card shadow">
+    <div class="card-body">
+
+         <h5 class="px-2 pt-3" style="display: inline-block;" >Searches</h5>
+
+
+            <hr style="border-bottom: 3px solid orangered;">
+
+
+        <div class="container-fluid">
+
+            <table class="table table-bordered table-sm" id="example">
+                <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Disease Name</th>
+                    <th>Number of Symptom</th>
+                    <th>Symptoms Name</th>
+                    <th>Confidence</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in history %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                    <td>{{i.user.email}}</td>
+                    <td>{{i.diseasename }}</td>
+                    <td>{{i.no_of_symp}}</td>
+                    <td>({{ i.symptomsname }})</td>
+                    <td>{{i.confidence}}</td>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

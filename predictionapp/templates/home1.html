@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <title>Disease Prediction System</title>
+  </head>
+  <body>
+    <!--        Navbar     -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a
+          href="/"
+          class="navbar-brand pred"
+          style="font-family: 'Great Vibes', cursive; font-size: 35px"
+          >Predico</a
+        >
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-lable="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item mx-3">
+              <a href="" class="nav-link text-white navdeco">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#about" class="nav-link text-white navdeco">About</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#services" class="nav-link text-white navdeco"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a href="#contact" class="nav-link text-white navdeco">Contact</a>
+            </li>
+            <li class="mx-5 login">
+              <a href="/userlogin">
+                <button type="button" class="btn btn-primary px-4">
+                  Login
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--        Bammer Image     -->
+    <div
+      class="banner-image w-100 d-flex justify-content-center align-items-center" style="background-image: url('{% static 'index.jpg'%}');"
+    >
+      <!--      <div class="content text-center">-->
+      <!--        <h1 class="text-white">Predico</h1>-->
+
+      <!--      </div>-->
+    </div>
+
+    <!--   --------Home           -->
+    <section class="home" style="background-image: url('{% static 'home.jpg'%}");'>
+      <div class="content">
+        <h2 class="pb-2 textheading">GENERAL DISEASE CLASSIFICATION</h2>
+        <p class="pb-2 texthome">
+          GENERAL DISEASE CLASSIFICATION BASED ON LIFE ORIENTATIION
+        </p>
+        <button id="btn-home"><a href="/userlogin" id="btn-home">Classify Now</a></button>
+      </div>
+    </section>
+
+    <!--   --------About Us------------           -->
+    <div class="center-vertical bg-dark" id="about">
+      <div class="about-us-section bg-light">
+        <div class="container">
+          <div class="title">
+            <h3 class="text-center">ABOUT US</h3>
+            <hr style="height: 3px; opacity: 1" class="mx-auto" />
+          </div>
+          <div class="row py-5">
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+              <div class="img-head">
+                <img src="{% static 'index2.jpg'%}" alt="" />
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h2 class="text-head">KNOW MORE ABOUT US</h2>
+              <div class="break-small mb-2"></div>
+
+              <p class="text-para">
+                The importance of maintaining your health and wellbeing
+                throughout your lifetime by incorporating exercise, diet,
+                preventative health checks, sleep management, managing mental
+                health issues, finding ways to relax and unwind are all
+                important aspects of our health and wellbeing.
+              </p>
+
+              <h6 style="color: gray">What does general health mean?</h6>
+              <p class="text-para">
+                The state of health of body as a whole, or a community.
+              </p>
+              <h6 style="color: gray">What are the 5 types of health?</h6>
+
+              <p class="text-para">
+                There are five main aspects of personal health: physical,
+                emotional, social, spiritual, and intellectual.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+     <!--   --------About Us------------           -->
+     <section id="services" class="">
+        <div class="container text-center mt-5">
+            <div class="title ">
+                <h3>OUR FEATURES & SERVICES</h3>
+                <hr style="height: 3px; opacity: 1;" class="mx-auto">
+                <p>Here you can check out our services available.</p>
+             </div>
+             <div class="row align-items-center">
+                <div class="box">
+                    <img src="{% static 'health.png'%}" height="100px" width="100px">
+                    <div class="align-items-center">
+                        <h3>General Health Prediction</h3>
+                        <p>Providing a number of general health related problem after prediction.</p>
+                        <button class="btn"><a style="text-decoration:none; color:currentColor;" href="/userlogin">See More</a></button>
+                      </div>
+                </div>
+        
+                <div class="box">
+                    <img src="{% static 'doctor.png'%}" height="100px" width="100px">
+                        <h3>Specialist Doctor</h3>
+                        <p>Providing specialist doctor after a great verification <br> team.</p>
+                        <button class="btn"><a style="text-decoration:none; color:currentColor;" href="/userlogin">See More</a></button>
+                </div>
+        
+                <div class="box">
+                    <img src="{% static 'blood.png'%}" height="100px" width="100px">
+                        <h3>Blood Donor/Request</h3>
+                        <p>Donate/Request for blood in your specific <br>area.</p>
+                    <button class="btn"><a style="text-decoration:none; color:currentColor;" href="/userlogin">See More</a></button>
+                </div>
+            </div>
+        </div>
+
+     </section>
+
+     <section id="contact" class="">
+      <div class="container text-center mt-5">
+        <div class="title ">
+          <h3>CONTACT US</h3>
+          <hr style="height: 3px; opacity: 1;" class="mx-auto">
+          <p class="text-center">General health needs include health promotion, preventive care (immunization, general health screening), treatment of acute and chronic illness, and appropriate referral for more specialized needs where required.</p>
+       </div>
+       <class="row">
+        <a href="https://www.google.com/maps/@27.6636951,85.3069401,16.04z"><img src="{% static 'location.png'%}" alt="location of general health disease prediction"width="100%" height="250px"></a>
+       </div>
+      </div>
+
+     </section>
+
+
+
+
+
+     <section class="footer mt-5" id="footer">
+      <div class="container py-4">
+        <div class="row py-5">
+          <div class="col-lg-4">
+            <h4>Health Prediction System</h4>
+            <p>Health prediction system is an innovative technology that uses advanced algorithms and data analysis to predict and prevent potential health risks.</p>
+            <span class="social"><i class="fab fa-facebook"> </i></span>
+            <span class="social"><i class="fab fa-facebook-messenger px-2"> </i></span>
+            <span class="social"><i class="fab fa-google-plus"> </i></span>
+            <span class="social"><i class="fab fa-pinterest px-2"> </i></span>
+          </div>
+          <div class="col-lg-3 offset col-md-3 col-sm-4 col-11 mb-2">
+            <h5 class="pb-4">QUICK LINKS</h5>
+            <a href="#" style="text-decoration:none"><p class="link"><span><i class="fas fa-angle-double-right"></i></span> Home</p></a>
+            <a href="#services" style="text-decoration:none"><p class="link"><span><i class="fas fa-angle-double-right"></i></span> Services</p></a>
+            <a href="#about" style="text-decoration:none"><p class="link"><span><i class="fas fa-angle-double-right"></i></span> About Us</p></a>
+            <a href="#contact" style="text-decoration:none"><p class="link"><span><i class="fas fa-angle-double-right"></i></span> Contact Us</p></a>
+    
+          </div>
+          <div class="col-lg-4">
+            <h5 class="pb-4">HOME LOCATION</h5>
+            <p>Nakkhu, Lalitpur-10</p>
+            <p class="link pt-3">+977 4-315046</p>
+            <p class="link">predico@gmail.com</p>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-lg-12">
+            <div class="card text-center py-2">
+              <p>Predico  ©   2019 , Theme By <span>DISEASE-CLASSIFICATION-SYSTEM.COM</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-dark", "shadow");
+        } else {
+          nav.classList.remove("bg-dark", "shadow");
+        }
+      });
+    </script>
+    {% for i in messages %}
+<script>
+    alert('{{i}}');
+</script>
+{% endfor %}
+  </body>
+
+</html>

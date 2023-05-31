@@ -1,0 +1,114 @@
+{% load static %}
+<html>
+<head>
+    <title>Check Disease</title>
+</head>
+<style>
+    label{
+        color:black;
+    }
+</style>
+<body>
+{% include 'navigation.html' %}
+<hr class="mt-0">
+<div class="card shadow m-5">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Check Your Disease</h5>
+            <form method="post" name="checkdisease">
+                {% csrf_token %}
+                <h5 class="my-3">Choose minimum first 4 uniques symptoms for predicting your disease!!!!!</h5>
+                <div class="form-row my-2">
+                    <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom1">Symptom 1</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                              <option value="" disabled selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+                   <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom1">Symptom 2</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                              <option value="" disabled selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom3">Symptom 3</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                                <option value="" disabled selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom4">Symptom 4</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                                <option value="" disabled selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom5">Symptom 5</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                                <option disabled  selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+                     <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom5">Symptom 6</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                                <option disabled  selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+                     <div class="col-sm-6">
+                        <div class="form-group my-3">
+                            <label for="symptom5">Symptom 7</label>
+                            <select class="form-select my-2" name="symptoms[]" aria-label="Default select example" required>
+                                <option disabled  selected>Select a symptoms</option>
+                                {% for i in list2 %}
+                                    <option value="{{i}}">{{i}}</option>
+                                {% endfor %}
+                                </select>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Check and Show Result" class="m-2 px-3 btn btn-primary">
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

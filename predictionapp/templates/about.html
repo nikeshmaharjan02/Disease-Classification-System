@@ -1,0 +1,136 @@
+{% extends 'navigation.html'%}
+{% block body %}
+{% load static %}
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@600&display=swap');
+        h1,h2,h3,h4,h5,h6{
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1,h2,h3,h4{
+            font-weight: 900;
+        }
+        h5,h6{
+            font-weight: 200;
+        }
+        .center-vertical{
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            align-items: center;
+
+        }
+        .about-us-section{
+            width: 100%;
+            padding: calc(2% + 35px) 0px;
+        }
+        .about-us-section .img-head{
+            position: relative;
+            overflow: hidden;
+        }
+        .about-us-section .img-head img{
+            width: 100%;
+            transition: transform 0.3s;
+        }
+        .about-us-section .img-head:hover img{
+            transform: scale(1.2);
+        }
+        .about-us-section .img-head::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right bottom, #19456b, #16c79a);
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.5;
+
+        }
+        .about-us-section .text-head{
+            font-size: 23px;
+            color: #16c79a;
+        }
+        .about-us-section .break-small{
+            width: 80px;
+            height: 3px;
+            background-color: #16c79a ;
+
+        }
+        .about-us-section .text-para{
+            font-size: 16px;
+            color: gray;
+        }
+        .about-us-section .box{
+            background-color: #19456b;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-us-section .box i{
+            font-size: 42px;
+        }
+        .about-us-section .box h4{
+            font-size: 14px;
+        }
+        .about-us-section .box p{
+            font-size: 22px;
+        }
+        .about-us-section .box::after,.about-us-section .box::before{
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #fff5;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .about-us-section .box::after{
+            left: -50px;
+            top: -50px;
+        }
+        .about-us-section .box::before{
+            right: -50px;
+            bottom: -50px;
+        }
+        .about-us-section .box:hover::after,.about-us-section .box:hover::before{
+            transform: scale(1.2);
+        }
+    </style>
+  <div class="center-vertical bg-dark">
+        <div class="about-us-section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                        <div class="img-head">
+                            <img  src="{% static  'index2.jpg'%}"  alt="">
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-head">KNOW MORE ABOUT US</h2>
+                        <div class="break-small mb-2"></div>
+
+                        <p class="text-para">The importance of maintaining your health and wellbeing throughout your lifetime by incorporating exercise, diet, preventative health checks, sleep management, managing mental health issues, finding ways to relax and unwind are all important aspects of our health and wellbeing.</p>
+
+                        <h6 style="color:gray;">What does general health mean?</h6>
+                        <p class="text-para">The state of health of body as a whole, or a community.</p>
+                        <h6 style="color:gray;">What are the 5 types of health?</h6>
+
+                        <p class="text-para">There are five main aspects of personal health: physical, emotional, social, spiritual, and intellectual.</p>
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-12 col-md-4 mb-2 mb-md-0">-->
+<!--                                <div class="box">-->
+<!--                                    <i class="fa fa-users mb-3"></i>-->
+<!--                                    <h4 class="mb-0">TOTAL CLIENTS</h4>-->
+<!--                                    <p class="mb-0">999</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+{% endblock %}

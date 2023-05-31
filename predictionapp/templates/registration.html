@@ -1,0 +1,266 @@
+{% load static %}
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Sans+Pro:wght@600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Montserrat', sans-serif;
+}
+hr {
+  width: 30px;
+  background-color: #ff7200;
+}
+a {
+  font-family: "Ubuntu", sans-serif;
+}
+.banner-image {
+  background-image: url('{% static 'index.jpg'%}');
+  height: 95px;
+
+  background-size: cover;
+}
+.navdeco {
+  position: relative;
+  letter-spacing: 0.5px;
+  padding: 10px;
+}
+.navdeco:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 4px;
+  transition: 0.3s;
+}
+.navdeco:hover:after {
+  width: 100%;
+}
+/* ----------home page------------ */
+.home {
+  background-image: url('{% static 'home.jpg'%}');
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content {
+  margin: 150px;
+  gap: 1.5rem;
+}
+.textheading {
+  font-family: initial;
+  font-size: 37px;
+}
+.texthome {
+  font-size: 15px;
+}
+#btn-home {
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: none;
+  height: 60px;
+  width: 200px;
+  color: white;
+  font-size: 1.5rem;
+  outline: none;
+  letter-spacing: 3px;
+  border-radius: 11px;
+}
+#btn-home:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+    </style>
+    <script>
+    function checkpass()
+    {
+        if(document.signup.pwd.value!=document.signup.cpwd.value)
+        {
+            alert('Password and Repeat Password field does not match');
+            document.signup.cpwd.focus();
+            return false;
+        }
+        return true;
+    }
+
+    </script>
+
+</head>
+<body>
+  <!--        Navbar     -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a
+          href="/"
+          class="navbar-brand pred"
+          style="font-family: 'Great Vibes', cursive; font-size: 35px"
+          >Predico</a
+        >
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-lable="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item mx-3">
+              <a href="/" class="nav-link text-white navdeco">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="/" class="nav-link text-white navdeco">About</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a href="/" class="nav-link text-white navdeco"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a href="/" class="nav-link text-white navdeco">Contact</a>
+            </li>
+            <li class="mx-5 login">
+              <a href="/userlogin">
+                <button type="button" class="btn btn-primary px-4">
+                  Login
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--        Bammer Image     -->
+    <div
+      class="banner-image w-100 d-flex justify-content-center align-items-center" style="background-image: url('{% static 'index.jpg'%}');"
+    >
+      <!--      <div class="content text-center">-->
+      <!--        <h1 class="text-white">Predico</h1>-->
+
+      <!--      </div>-->
+    </div>
+<hr class="mt-0">
+
+<div class="card shadow m-5" id="signupform">
+    <div class="card-body">
+
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Create an Account</h5>
+            <form method="POST" name="signup" onsubmit="return checkpass();" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="fname" placeholder="Enter First Name" class="form-control"
+                                   pattern="[A-Za-z]+" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lname" placeholder="Enter Last Name" class="form-control"
+                                   pattern="[A-Za-z]+">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Email ID</label>
+                            <input type="email" name="email" placeholder="Email Address" required class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <input type="text" name="mobile" placeholder="Contact Number" required
+                                   class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" name="cpwd" placeholder="Enter Password Again" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea name="address" class="form-control" placeholder="Full Address" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" value="Submit" class="m-2 px-3 btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-dark", "shadow");
+        } else {
+          nav.classList.remove("bg-dark", "shadow");
+        }
+      });
+    </script>
+
+</body>
+</html>

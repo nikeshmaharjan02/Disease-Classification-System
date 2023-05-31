@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<head>
+    <title>Predicted Disease</title>
+</head>
+<style>
+    label{
+        color:black;
+    }
+</style>
+<body>
+{% include 'navigation.html' %}
+<hr class="mt-0">
+<div class="card shadow m-5">
+    <div class="card-body">
+        <div class="container-fluid">
+            <h5 class="p-2" style="border-bottom: 2px solid orange;color:green">Your Predicted Disease</h5>
+
+        </div>
+        <div>
+           <div class="text-center my-3"> <h4 style="background:lightslategray;color:white;padding: 20px 0;;">Your Disease Prediction Result</h4></div>
+        </div>
+        <div class="text-center" >
+            <div class="my-2"><p style="padding: 15px 0;color:red;background:antiquewhite;">It seems like you suffered from <a href="#">headache</a> disease.</p></div>
+             <div class="my-2"><p style="padding: 15px 0;color:white;background:lightslategray;">You have following Symptoms.</p></div>
+            <button class="btn btn-danger px-5 mb-3 py-2">Head acge</button>
+            <button class="btn btn-danger px-5  mb-3 py-2">Head acge</button>
+            <button class="btn btn-danger px-5 mb-3 py-2">Head acge</button>
+            <button class="btn btn-danger px-5 py-2 mb-3">Head acge</button>
+            <button class="btn btn-danger px-5 py-2 mb-3">Head acge</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

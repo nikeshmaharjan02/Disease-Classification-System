@@ -1,0 +1,55 @@
+{% extends 'navigation.html'%}
+{% block body %}
+{% load static %}
+<style>
+    .home {
+  background-image: url('{% static 'home.jpg'%}');
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content {
+  margin: 150px;
+  gap: 1.5rem;
+}
+.textheading {
+  font-family: initial;
+  font-size: 37px;
+}
+.texthome {
+  font-size: 15px;
+}
+#btn-home {
+  font-family: "Source Sans Pro", sans-serif;
+  text-decoration: none;
+  height: 60px;
+  width: 200px;
+  color: white;
+  font-size: 1.5rem;
+  outline: none;
+  letter-spacing: 3px;
+  border-radius: 11px;
+}
+#btn-home:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+</style>
+ <!--   --------Home           -->
+    <section class="home" style="background-image: url('{% static 'home.jpg'%}");'>
+      <div class="content">
+        <h2 class="pb-2 textheading">GENERAL DISEASE CLASSIFICATION</h2>
+        <p class="pb-2 texthome">
+          GENERAL DISEASE CLASSIFICATION BASED ON LIFE ORIENTATIION
+        </p>
+        <button id="btn-home"><a href="/check-disease/" id="btn-home">Classify Now</a></button>
+      </div>
+    </section>
+<footer >
+     <div class="card text-center py-2" style="background:grey; color:white;">
+              <p>Predico  ©   2019 , Theme By <span>DISEASE-CLASSIFICATION-SYSTEM.COM</span></p>
+            </div>
+</footer>
+
+{% endblock %}
